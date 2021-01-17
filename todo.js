@@ -3,7 +3,21 @@ const toDoForm = document.querySelector(".js-toDoForm"),
     toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
-const toDos = [];
+let toDos = [];
+
+function deleteToDo(event) {
+    //console.dir(event.target); : parentNode 찾아보기
+    //console.log(event.target.parentNode);
+    const btn = event.target;
+    const li = btn.parentNode;
+    toDoList.removeChild(li);
+    // list에 있는 모든 item에 각각 funtion 실행
+    const cleanToDos = toDos.filter(function(toDo) {
+        return toDo.id !== parseInt(li.id);
+    });
+    toDos = cleanToDos;
+    saveToDos();
+}
 
 function saveToDos() {
     // localStorage는 string만 저장가능
@@ -17,6 +31,7 @@ function paintToDo(text) {
     const span = document.createElement("span");
     const newId = toDos.length + 1
     delBtn.innerText = "x";
+    delBtn.addEventListener("click", deleteToDo);
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
