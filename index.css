@@ -15,11 +15,17 @@ body {
 }
 
 h1 {
-    font: 70px Arial, sans-serif;
+    font: 80px Arial, sans-serif;
+    color: white;
 }
 
 h4 {
     font: 25px Arial, sans-serif;
+    color: white;
+}
+
+span {
+    color: white;
 }
 
 .form,
@@ -55,12 +61,13 @@ input {
     appearance: none;
     border: 0;
     font-size: 22px;
-    color: black;
-    border-bottom: 2px solid black;
+    color: white;
+    border-bottom: 2px solid white;
   }
   
 input::placeholder {
-    color: black;
+    color: white;
+    text-align: center;
 }
   
 input:focus,
@@ -75,7 +82,11 @@ ul {
 }
   
 ul {
-margin-top: 50px;
+    margin-top: 50px;
+}
+
+li {
+    color: white;
 }
 
 .toDo__button {
