@@ -4,6 +4,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 let toDos = [];
+let setId = 1;
 
 function deleteToDo(event) {
     //console.dir(event.target); : parentNode 찾아보기
@@ -29,7 +30,8 @@ function paintToDo(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = toDos.length + 1
+    const newId = setId;
+    setId += 1;
     delBtn.innerText = "❌";
     delBtn.className = "toDo__button";
     delBtn.addEventListener("click", deleteToDo);
