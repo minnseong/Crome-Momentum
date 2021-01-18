@@ -1,9 +1,10 @@
 const weather = document.querySelector(".js-weather");
 
-const API_KEY = "3a20e394ee27b3217b1e36b4bde2a172";
+const API_KEY;
 const COORDS = 'coords';
 
 function getWeather(lat, lng) {
+    // https://openweathermap.org/api 사이트 참고
     fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
     )
